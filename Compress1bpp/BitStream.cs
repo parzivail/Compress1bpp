@@ -27,6 +27,13 @@ namespace Compress1bpp
 		public BitStream()
 		{
 			_stream = new byte[1];
+			Length = 0;
+		}
+
+		public BitStream(byte[] data)
+		{
+			_stream = data;
+			Length = data.Length * 8;
 		}
 
 		private static byte Mask8(int bit)
@@ -83,9 +90,51 @@ namespace Compress1bpp
 			return (byte)b;
 		}
 
+		public short Peek16(int n)
+		{
+			var b = 0;
+
+			for (var i = 0; i < n; i++)
+			{
+				b <<= 1;
+				b |= BitAt(Position + i) ? 1 : 0;
+			}
+			
+			return (short)b;
+		}
+
+		public int Peek32(int n)
+		{
+			var b = 0;
+
+			for (var i = 0; i < n; i++)
+			{
+				b <<= 1;
+				b |= BitAt(Position + i) ? 1 : 0;
+			}
+			
+			return b;
+		}
+
 		public byte Read8(int n)
 		{
 			var b = Peek8(n);
+			Position += n;
+			
+			return b;
+		}
+
+		public short Read16(int n)
+		{
+			var b = Peek16(n);
+			Position += n;
+			
+			return b;
+		}
+
+		public int Read32(int n)
+		{
+			var b = Peek32(n);
 			Position += n;
 			
 			return b;

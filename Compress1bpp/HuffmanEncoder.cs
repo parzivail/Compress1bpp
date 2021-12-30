@@ -7,11 +7,11 @@ namespace Compress1bpp
 	{
 		public static void Encode(BitStream src, BitStream dest, int symbolSize)
 		{
-			var data = new List<byte>();
+			var data = new List<int>();
 			for (var i = 0; i < src.Length; i += symbolSize) 
-				data.Add(src.Read8(symbolSize));
+				data.Add(src.Read32(symbolSize));
 
-			var h = new Huffman<byte>();
+			var h = new Huffman<int>();
 			h.Build(data);
 			
 			// Don't need to write symbol size itself, it is
