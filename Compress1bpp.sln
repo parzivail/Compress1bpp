@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compress1bpp", "Compress1bpp\Compress1bpp.csproj", "{63AFDF2C-1829-46E6-9A28-FBBA89E543EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63AFDF2C-1829-46E6-9A28-FBBA89E543EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AFDF2C-1829-46E6-9A28-FBBA89E543EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AFDF2C-1829-46E6-9A28-FBBA89E543EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AFDF2C-1829-46E6-9A28-FBBA89E543EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
